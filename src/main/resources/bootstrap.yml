@@ -48,17 +48,17 @@ spring:
       # 展示修改以后的sql语句
       sql-show: true
   activemq:
-    broker-url: tcp://192.168.230.129:61616
+    broker-url: tcp://127.0.0.1:61616
     user: admin
     password: admin
   cloud:
     nacos:
       discovery:
         namespace: xue
-        server-addr: 192.168.230.129:8848
+        server-addr: 127.0.0.1:8848
       config:
         namespace: xue
-        server-addr: 192.168.230.129:8848
+        server-addr: 127.0.0.1:8848
         file-extension: yml
         group: DEFAULT_GROUP
         data-id: order-service-local
