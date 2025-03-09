@@ -3,8 +3,8 @@ spring:
     # 数据源配置
     datasource:
       # 数据源名称，多数据源以逗号分隔
-      names: db0
-      db0:
+      names: ds0
+      ds0:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         jdbc-url: jdbc:mysql://192.168.230.129:3306/order?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
@@ -20,11 +20,11 @@ spring:
             type: INLINE
             props:
               # 分片算法的行表达式
-              algorithm-expression: sale_order_$->{store_id % 2}
+              algorithm-expression: sale_order_0$->{store_id % 2}
         tables:
           # 逻辑表名称
           sale_order:
-            actual-data-nodes: ds0.sale_order_$->{0..1}
+            actual-data-nodes: ds0.sale_order_0$->{0..1}
             # 分表策略
             table-strategy:
               standard:

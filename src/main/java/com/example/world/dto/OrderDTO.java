@@ -1,20 +1,15 @@
-package com.example.world.pojo;
-
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+package com.example.world.dto;
 
 import java.io.Serializable;
 import java.util.Date;
 
-@TableName("sale_order")
-public class Order implements Serializable {
-    @TableId(type=IdType.AUTO)
+public class OrderDTO implements Serializable {
+
     private Long id;
+
     private Long amount;
-    private Long created;
-    private Long updated;
+    private Date created;
+    private Date updated;
     private String storeCode;
     private String storeName;
     private Long storeId;
@@ -27,7 +22,6 @@ public class Order implements Serializable {
     public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
     }
-
 
     public Long getId() {
         return id;
@@ -45,19 +39,19 @@ public class Order implements Serializable {
         this.amount = amount;
     }
 
-    public Long getCreated() {
+    public Date getCreated() {
         return created;
     }
 
-    public void setCreated(Long created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 
-    public Long getUpdated() {
+    public Date getUpdated() {
         return updated;
     }
 
-    public void setUpdated(Long updated) {
+    public void setUpdated(Date updated) {
         this.updated = updated;
     }
 
