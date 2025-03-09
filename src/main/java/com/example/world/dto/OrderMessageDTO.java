@@ -1,10 +1,12 @@
 package com.example.world.dto;
 
+import com.example.world.vo.OrderConsigneeVO;
+import com.example.world.vo.OrderWareVO;
+
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
-public class OrderDTO implements Serializable {
+public class OrderMessageDTO implements Serializable {
 
     private Long id;
 
@@ -17,24 +19,24 @@ public class OrderDTO implements Serializable {
     private Integer orderStatus;
     private String orderNo;
 
-    private List<OrderWareDTO> orderWareList;
+    private List<OrderWareMessageDTO> orderWareMessageDTOS;
 
-    private OrderConsigneeDTO orderConsigneeDTO;
+    private OrderConsigneeMessageDTO orderConsigneeDTO;
 
-    public OrderConsigneeDTO getOrderConsigneeDTO() {
+    public List<OrderWareMessageDTO> getOrderWareMessageDTOS() {
+        return orderWareMessageDTOS;
+    }
+
+    public void setOrderWareMessageDTOS(List<OrderWareMessageDTO> orderWareMessageDTOS) {
+        this.orderWareMessageDTOS = orderWareMessageDTOS;
+    }
+
+    public OrderConsigneeMessageDTO getOrderConsigneeDTO() {
         return orderConsigneeDTO;
     }
 
-    public void setOrderConsigneeDTO(OrderConsigneeDTO orderConsigneeDTO) {
+    public void setOrderConsigneeDTO(OrderConsigneeMessageDTO orderConsigneeDTO) {
         this.orderConsigneeDTO = orderConsigneeDTO;
-    }
-
-    public List<OrderWareDTO> getOrderWareList() {
-        return orderWareList;
-    }
-
-    public void setOrderWareList(List<OrderWareDTO> orderWareList) {
-        this.orderWareList = orderWareList;
     }
 
     public String getOrderNo() {
@@ -44,7 +46,6 @@ public class OrderDTO implements Serializable {
     public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
     }
-
     public Long getId() {
         return id;
     }
@@ -108,4 +109,5 @@ public class OrderDTO implements Serializable {
     public void setOrderStatus(Integer orderStatus) {
         this.orderStatus = orderStatus;
     }
+
 }

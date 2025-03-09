@@ -21,7 +21,6 @@ public class OrderController {
 
     @RequestMapping("/getOrderList")
     public Result getOrderList(@RequestBody OrderDTO orderDTO){
-
         List<OrderVO> orderList=orderService.getOrderList(orderDTO);
         return Result.success(orderList);
     }
@@ -32,9 +31,9 @@ public class OrderController {
         return Result.success(orderVO);
     }
 
-    @RequestMapping("/addOrder")
-    public Result addOrder(@RequestBody OrderDTO orderDTO){
-        boolean result=orderService.addOrder(orderDTO);
+    @RequestMapping("/createOrder")
+    public Result createOrder(@RequestBody OrderDTO orderDTO){
+        boolean result=orderService.createOrder(orderDTO);
         return Result.success(result);
     }
 

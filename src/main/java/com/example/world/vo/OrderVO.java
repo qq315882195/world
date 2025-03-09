@@ -1,20 +1,36 @@
 package com.example.world.vo;
 
+import com.example.world.dto.OrderWareDTO;
+
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class OrderVO implements Serializable {
 
     private Long id;
 
     private Long amount;
-    private Date created;
-    private Date updated;
+    private Long created;
+    private Long updated;
     private String storeCode;
     private String storeName;
     private Long storeId;
     private Integer orderStatus;
     private String orderNo;
+
+    private List<OrderWareVO> orderWareVOS;
+
+    private OrderConsigneeVO orderConsigneeVO;
+
+    public List<OrderWareVO> getOrderWareVOS() {
+        return orderWareVOS;
+    }
+
+    public void setOrderWareVOS(List<OrderWareVO> orderWareVOS) {
+        this.orderWareVOS = orderWareVOS;
+    }
+
     public String getOrderNo() {
         return orderNo;
     }
@@ -38,19 +54,19 @@ public class OrderVO implements Serializable {
         this.amount = amount;
     }
 
-    public Date getCreated() {
+    public Long getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(Long created) {
         this.created = created;
     }
 
-    public Date getUpdated() {
+    public Long getUpdated() {
         return updated;
     }
 
-    public void setUpdated(Date updated) {
+    public void setUpdated(Long updated) {
         this.updated = updated;
     }
 
@@ -84,5 +100,13 @@ public class OrderVO implements Serializable {
 
     public void setOrderStatus(Integer orderStatus) {
         this.orderStatus = orderStatus;
+    }
+
+    public void setOrderConsigneeVO(OrderConsigneeVO orderConsigneeVO) {
+        this.orderConsigneeVO = orderConsigneeVO;
+    }
+
+    public OrderConsigneeVO getOrderConsigneeVO() {
+        return orderConsigneeVO;
     }
 }
